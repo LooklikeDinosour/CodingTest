@@ -5,10 +5,10 @@ class Solution {
         int answer = 0;
         int numLength = nums.length;
         int pickMax = nums.length/2; //최대갯수
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
         for(int i = 0; i < numLength; i++) {
-                map.put(nums[i], 1);                
+            set.add(nums[i]);
         }
-        return pickMax > map.size() ? map.size() : pickMax;
+            return pickMax > set.size() ? set.size() : pickMax;
     }
 }
