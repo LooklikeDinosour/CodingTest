@@ -5,15 +5,12 @@ class Solution {
         int answer = 0;
         int numLength = nums.length;
         int pickMax = nums.length/2; //최대갯수
-        HashSet<Integer> set = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
         for(int i = 0; i < numLength; i++) {
-            set.add(nums[i]);
+            if(!list.contains(nums[i])) {
+                list.add(nums[i]);                
+            }
         }
-        answer = set.size();
-        if(answer > pickMax) {
-            return pickMax;
-        } else {
-            return answer;
-        }
+        return pickMax > list.size() ? list.size() : pickMax;
     }
 }
