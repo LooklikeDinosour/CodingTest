@@ -5,13 +5,11 @@ class Solution {
         int answer = 0;
         int numLength = nums.length;
         int pickMax = nums.length/2; //최대갯수
-         List<Integer> list = new ArrayList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < numLength; i++) {
-            if(!list.contains(nums[i])) {
-                list.add(nums[i]);                
-            }
+                map.put(nums[i], 1);                
         }
-        answer = list.size();
+        answer = map.size();
         if(answer > pickMax) {
             return pickMax;
         } else {
